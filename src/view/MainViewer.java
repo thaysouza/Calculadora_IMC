@@ -100,8 +100,8 @@ public class MainViewer {
 		appFrame.getContentPane().add(calcularButton);
 		
 	    resultPane = new JTextPane();
+	    resultPane.setForeground(Color.DARK_GRAY);
 		resultPane.setBorder(new EmptyBorder(8, 8, 8, 8));
-		resultPane.setText("result");
 		resultPane.setBounds(31, 286, 221, 50);
 		appFrame.getContentPane().add(resultPane);
 	}

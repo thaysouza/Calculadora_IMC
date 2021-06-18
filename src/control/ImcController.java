@@ -3,11 +3,14 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.ImcBeam;
 import view.MainViewer;
 
 public class ImcController implements ActionListener{
 	
 	private MainViewer context;
+	private ImcBeam imc;
+	
 	public ImcController() {
 		
 	}
@@ -23,10 +26,10 @@ public class ImcController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println(context.getPesoTextField().getText());
-		System.out.println(context.getAlturaTextField().getText());
-		
-		context.getResultPane().setText("Peso =" + context.getPesoTextField().getText() + "  | Altura  = " + context.getAlturaTextField().getText());
+		imc = new ImcBeam(context.getPesoTextField().getText(), 
+				  context.getAlturaTextField().getText());
+	
+		context.getResultPane().setText(imc.getResult());
 		
 	}
 
